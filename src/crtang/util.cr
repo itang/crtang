@@ -1,4 +1,5 @@
 module Crtang
+  extend self
 
   def time 
     start = Time.now.ticks
