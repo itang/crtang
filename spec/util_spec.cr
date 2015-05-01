@@ -17,5 +17,14 @@ describe "Util" do
       ret.should eq(CONSTANT_1)
       (e >= 0.1).should be_true
     end
+
+    it "time cost in milliseconds" do
+      ret, e = time do
+        sleep(1)
+      end
+      d = e as Float
+      puts d
+      ( d >= 1000 && d <= 1100 ).should be_true
+    end
   end
 end

@@ -1,10 +1,10 @@
 module Crtang
   extend self
 
-  def time 
+  def time
     start = Time.now.ticks
     ret = yield
-    elapsed = (Time.now.ticks - start) / 1000_000.0
+    elapsed = TimeSpan.new(Time.now.ticks - start).total_milliseconds
     puts "Elapsed time: #{elapsed} msecs"
 
     [ret, elapsed]
